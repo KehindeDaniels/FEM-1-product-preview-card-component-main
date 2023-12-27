@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@900..950&display=swap');
 
 :root {
-    --clr-primary-cyan: hsl(158, 36%, 37%);
+    --clr-primary-cyan: hsl(158, 36%, 40%);
+    --clr-primary-cyan-dark: hsl(158, 36%, 30%);
     --clr-primary-cream: hsl(30, 38%, 92%);
 
     --clr-neutral-dark-blue: hsl(212, 21%, 14%);
@@ -38,6 +39,8 @@ blockquote,
 dl,
 dd {
   margin-block-end: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -60,6 +63,11 @@ body {
   font-family: var(--ff-body);
   background-color: var(--clr-primary-cream);
   color: var(--clr-neutral-grayish-blue);
+
+  font-size: 0.875rem;
+
+  display: grid;
+  place-content: center;
 }
 
 /* A elements that don't have a class get default styles */
@@ -99,3 +107,99 @@ select {
 }
 
 
+
+
+/* Main */
+
+/* Product */
+.product {
+    background-color: var(--clr-white);
+    border-radius: .5rem;
+    overflow: hidden;
+
+    display: grid;
+    max-width: 38.125rem;
+}
+
+
+/* Product Content */
+
+.product__content {
+  padding: 1.5rem 2rem;
+  display: grid;
+  gap: .5rem;
+}
+
+/* Product Category */
+.product__category {
+    font-family: var(--ff-secondary);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+.product__title {
+    font-size: 2rem;
+    line-height: 1.1;
+    color: var(--clr-neutral-dark-blue);
+    font-weight: var(--fw-bold);
+}
+
+.product__desscription {
+  font-weight: var(--fw-regular);
+}
+
+
+.product__price{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product__price p:first-child {
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-primary-cyan);
+}
+
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  border-radius: .5rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--clr-primary-cyan);
+  color: var(--clr-white);
+  font-weight: var(--fw-bold);
+
+  /* flexing because of the icon */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+
+button:is(:hover, :focus) {
+  background-color: var(--clr-primary-cyan-dark);
+}
+
+button[data-icon="shopping-cart"]::before {
+  content: '';
+  background-image: url("images/icon-cart.svg");
+  width: 15px;
+  height: 16px;
+}
+
+
+/* Media query for screens with a MINIMUM width of 600px */
+@media screen and (min-width: 600px) {
+  /* Styles for screens larger than 600px width */
+  
+  .product {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  button {
+    padding: .5rem 1.5rem;
+  }
+}
