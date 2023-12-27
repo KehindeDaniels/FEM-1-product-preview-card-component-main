@@ -179,8 +179,21 @@ button {
   gap: .5rem;
 }
 
+/* 
+button:focus,
+button:hover {
+  background-color: var(--clr-primary-cyan-dark);
+} */
+
+
 button:is(:hover, :focus) {
   background-color: var(--clr-primary-cyan-dark);
+}
+
+/* Clearly visible focus outline for accessibility on tab focus */
+button:focus {
+  outline: 2px solid var(--clr-primary-cyan-dark);
+  outline-offset: 2px;
 }
 
 button[data-icon="shopping-cart"]::before {
