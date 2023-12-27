@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@900..950&display=swap');
+
+:root {
+    --clr-primary-cyan: hsl(158, 36%, 37%);
+    --clr-primary-cream: hsl(30, 38%, 92%);
+
+    --clr-neutral-dark-blue: hsl(212, 21%, 14%);
+    --clr-neutral-grayish-blue: hsl(228, 12%, 48%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    --ff-body: 'Montserrat', sans-serif;
+    --ff-secondary: 'Fraunces', sans-serif;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+}
+
+
+
+
 /* Box sizing rules */
 *,
 *::before,
@@ -35,6 +56,10 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+
+  font-family: var(--ff-body);
+  background-color: var(--clr-primary-cream);
+  color: var(--clr-neutral-grayish-blue);
 }
 
 /* A elements that don't have a class get default styles */
@@ -72,3 +97,5 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+
